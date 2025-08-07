@@ -1,4 +1,5 @@
 #include<iostream>
+#include <map>
 using namespace std;
 
 
@@ -19,7 +20,33 @@ void char_hashing(){
     }
 }
 
+
+void ques(){
+
+    vector <int> nums;
+    nums.push_back(1);
+    nums.push_back(2);
+    nums.push_back(2);
+    nums.push_back(3);
+    nums.push_back(1);
+    nums.push_back(4);
+
+    map<int , int> m;
+        for(int i=0;i<nums.size();i++){
+            m[nums[i]]++;
+        }
+        int ans=0;
+        for(auto it : m){
+            if(it.second>ans){
+                ans = it.second;
+            }
+        }
+        cout<< ans<<endl;;
+}
+
+
+
 int main(){
-    char_hashing();
+    ques();
     return 0;
 }
